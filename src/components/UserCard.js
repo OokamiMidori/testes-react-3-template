@@ -46,15 +46,16 @@ const Value = styled.p`
 `;
 
 const UserCard = () => {
-    const [ user, setUser ] = useState(null)
+  const [user, setUser] = useState(null)
 
-    useEffect(() => {
-      axios.get("https://dummyjson.com/users/7")
-        .then((response) => {
-            setUser(response.data)
-        })
-    }, [])
-    
+  useEffect(() => {
+    axios.get("https://dummyjson.com/users/7")
+
+      .then((response) => {
+        setUser(response.data)
+      })
+  }, [])
+
   const formatCardNumber = (str) => {
     return str.match(/.{1,4}/g).join(" ")
   }
@@ -78,7 +79,7 @@ const UserCard = () => {
       </CardTop>
 
       <CardNumber>{formatCardNumber(user.bank.cardNumber)}</CardNumber>
-      
+
       <CardBottom>
         <article>
           <Label>Expires</Label>
