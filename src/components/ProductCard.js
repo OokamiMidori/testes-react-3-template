@@ -41,7 +41,7 @@ const ProductCard = () => {
 
     useEffect(() => {
         axios.get("https://dummyjson.com/products/6").then((response) => {
-            setProductData(response.data);
+           setProductData(response.data);
         });
     }, []);
 
